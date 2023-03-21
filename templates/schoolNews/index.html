@@ -8,8 +8,24 @@
     <body>
         <h1><strong>School News</strong></h1>
     <div>
-        hey there partner! <br />
-        <strong>{{ boldmessage }}</strong><br />
+        {%if news %}
+            {% for item in news %}
+                <div>
+                   {{ item.name }}
+                </div>
+                <div>
+                    {{ item.author}}
+                </div>
+                <div>
+                    {{ item.date }}
+                </div>
+                <div>
+                    {{ item.text }}
+                </div>
+            {% endfor %}
+        {% else %}
+            <strong>There are no news items present.</strong>
+        {% endif %}
     </div>
     </body>
 </html>
