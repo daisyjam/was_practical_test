@@ -5,27 +5,29 @@
         <title>School News</title>
     </head>
 
-    <body>
-        <h1><strong>School News</strong></h1>
-    <div>
-        {%if news %}
-            {% for item in news %}
-                <div>
-                   {{ item.title }}
-                </div>
-                <div>
-                    {{ item.author}}
-                </div>
-                <div>
-                    {{ item.date }}
-                </div>
-                <div>
-                    {{ item.text }}
-                </div>
-            {% endfor %}
-        {% else %}
-            <strong>There are no news items present.</strong>
-        {% endif %}
-    </div>
+    <body style="background-color:yellow;">
+
+        <center><h1><strong>School News</strong></h1></center>
+
+        <div>
+            {%if news %}
+                {% for item in news %}
+                    <div>
+                        <h2><strong>{{ item.title }}</strong></h2>
+                    </div>
+                    <div>
+                        <em> by {{ item.author}}&nbsp </em> | &nbsp{{ item.date }}
+                        <br></br>
+                    </div>
+                    <div>
+                        {{ item.text }}
+                        <br></br>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <strong>There are no news items present.</strong>
+            {% endif %}
+        </div>
+
     </body>
 </html>
