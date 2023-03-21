@@ -10,7 +10,6 @@ def index(request):
     news_list = News.objects.order_by('-date')
 
     context_dict = {}
-    context_dict['boldmessage'] = 'Crunchy, creamy, cookie, candy, cupcake!'
     context_dict['news'] = news_list
     # Return a rendered response to send to the client.
     # We make use of the shortcut function to make our lives easier.
